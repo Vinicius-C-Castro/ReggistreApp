@@ -23,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
               alignment: Alignment.bottomCenter,
               child:  Container(
                 width: size.width,
-                height: size.height * 0.6,
+                height: size.height * 0.65,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -33,17 +33,89 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 40, left: 32, right: 32),
-                  child: Column(
-                    children: [
-                      Text("Bem Vindo!", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26)
-                      ),
-                      SizedBox(
-                        height: 16,
-                      ),
-                      Text("Mantenha suas despesas em dia!"),
-                      Text("Bem Vindo!", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26)
-                      ),
-                    ],
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Bem vindo!", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26)),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Text("Mantenha suas despesas em dia!"),
+                        SizedBox(
+                          height: 40 ,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 8),
+                          child: Text("EMAIL", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                        ),
+                        TextField(
+                            decoration: InputDecoration(border: OutlineInputBorder())
+                        ),
+                        SizedBox(
+                          height: 16 ,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 8),
+                          child: Text("SENHA", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                        ),
+                        TextField(
+                            decoration: InputDecoration(border: OutlineInputBorder())
+                        ),
+                        SizedBox(
+                          height: 16 ,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: FlatButton(
+                                onPressed: null,
+                                child: Text(
+                                  "ENTER",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                color: Colors.green,
+                                onLongPress: () {},
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 16 ,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: FlatButton(
+                                onPressed: null,
+                                child: Text(
+                                  "Esqueci minha senha",
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                                onLongPress: () {},
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 16 ,
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: FlatButton(
+                                onPressed: null,
+                                child: Text(
+                                  "CRIAR UMA CONTA",
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                                onLongPress: () {},
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               )
