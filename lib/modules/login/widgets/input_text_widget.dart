@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class InputTextWidget extends StatelessWidget {
@@ -8,17 +7,35 @@ class InputTextWidget extends StatelessWidget {
     @required this.label
   }) : super(key: key);
 
+  InputBorder get inputBorder =>  OutlineInputBorder(
+    borderRadius: BorderRadius.circular(4),
+      borderSide: BorderSide(
+          color: Color.fromRGBO(143, 146, 161, 0.2),
+          width: 2
+      )
+  );
+
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 8),
-          child: Text(this.label, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+          padding: const EdgeInsets.only(bottom: 10),
+          child: Text(label, style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12)),
         ),
-        TextField(
-            decoration: InputDecoration(border: OutlineInputBorder())
+        Container(
+          height: 48,
+          child: TextField(
+              decoration: InputDecoration(
+                  border: inputBorder,
+                enabledBorder: inputBorder,
+                disabledBorder: inputBorder,
+                errorBorder: inputBorder,
+                focusedBorder: inputBorder,
+                focusedErrorBorder: inputBorder
+              )
+          ),
         ),
       ],
     );

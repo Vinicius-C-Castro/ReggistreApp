@@ -1,3 +1,4 @@
+import 'widgets/flat_button_expanded.dart';
 import 'widgets/input_text_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -38,70 +39,52 @@ class _LoginPageState extends State<LoginPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Bem vindo!", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26)),
-                        SizedBox(
-                          height: 16,
+                        Text(
+                            "Bem vindo!",
+                            style: TextStyle(fontWeight: FontWeight.w700, fontSize: 22)
                         ),
-                        Text("Mantenha suas despesas em dia!"),
                         SizedBox(
-                          height: 40 ,
+                          height: 10,
+                        ),
+                        Text(
+                          "Mantenha suas despesas em dia!",
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xFF8F92A1)
+                          ),
+                        ),
+                        SizedBox(
+                          height: 38 ,
                         ),
                         InputTextWidget(label: "EMAIL"),
                         SizedBox(
-                          height: 16 ,
+                          height: 18 ,
                         ),
                         InputTextWidget(label: "SENHA"),
                         SizedBox(
-                          height: 16 ,
+                          height: 18 ,
                         ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: FlatButton(
-                                onPressed: null,
-                                child: Text(
-                                  "ENTER",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                color: Colors.green,
-                                onLongPress: () {},
-                              ),
-                            ),
-                          ],
+                        FlatButtonExpanded(
+                          label: "ENTRAR",
+                          onTap: (){},
+                          type: FlatButtonExpandedType.fill,
                         ),
                         SizedBox(
-                          height: 16 ,
+                          height: 18 ,
                         ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: FlatButton(
-                                onPressed: null,
-                                child: Text(
-                                  "Esqueci minha senha",
-                                  style: TextStyle(color: Colors.black),
-                                ),
-                                onLongPress: () {},
-                              ),
-                            ),
-                          ],
+                        FlatButtonExpanded(
+                          label: "Esqueci minha senha",
+                          onTap: (){},
+                          type: FlatButtonExpandedType.none,
                         ),
                         SizedBox(
-                          height: 16 ,
+                          height: 22,
                         ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: FlatButton(
-                                onPressed: null,
-                                child: Text(
-                                  "CRIAR UMA CONTA",
-                                  style: TextStyle(color: Colors.black),
-                                ),
-                                onLongPress: () {},
-                              ),
-                            ),
-                          ],
+                        FlatButtonExpanded(
+                          label: "Criar uma conta",
+                          onTap: (){},
+                          type: FlatButtonExpandedType.outline,
                         ),
                       ],
                     ),
