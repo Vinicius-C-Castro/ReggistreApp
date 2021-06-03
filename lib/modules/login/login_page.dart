@@ -1,3 +1,4 @@
+import 'widgets/input_text_widget.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -45,23 +46,11 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           height: 40 ,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 8),
-                          child: Text("EMAIL", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-                        ),
-                        TextField(
-                            decoration: InputDecoration(border: OutlineInputBorder())
-                        ),
+                        InputTextWidget(label: "EMAIL"),
                         SizedBox(
                           height: 16 ,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 8),
-                          child: Text("SENHA", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-                        ),
-                        TextField(
-                            decoration: InputDecoration(border: OutlineInputBorder())
-                        ),
+                        InputTextWidget(label: "SENHA"),
                         SizedBox(
                           height: 16 ,
                         ),
