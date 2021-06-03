@@ -16,10 +16,12 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            width: size.width,
-            height: size.height,
-            color: Colors.green,
+          Align(
+            alignment: Alignment.topCenter,
+            child: Container(
+              width: size.width,
+              child: Image.asset("assets/imagens/Reggistre_Logotipo.png", fit: BoxFit.fitWidth,),
+            ),
           ),
           Align(
               alignment: Alignment.bottomCenter,
