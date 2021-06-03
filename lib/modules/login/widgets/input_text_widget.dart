@@ -41,7 +41,7 @@ class InputTextWidget extends StatelessWidget {
           Icons.visibility,
       ),
       "textStyle": TextStyle(
-          fontSize: 14,
+          fontSize: 22,
           fontWeight: FontWeight.w500,
           color: Color(0xFF7F85A2)
       ),
