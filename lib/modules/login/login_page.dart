@@ -59,11 +59,17 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           height: 38 ,
                         ),
-                        InputTextWidget(label: "EMAIL"),
+                        InputTextWidget(
+                          label: "EMAIL",
+                          type: ImputTextType.email
+                        ),
                         SizedBox(
                           height: 18 ,
                         ),
-                        InputTextWidget(label: "SENHA"),
+                        InputTextWidget(
+                          label: "SENHA",
+                          type: ImputTextType.password,
+                        ),
                         SizedBox(
                           height: 18 ,
                         ),
