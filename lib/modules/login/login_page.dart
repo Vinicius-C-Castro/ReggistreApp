@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 40, left: 32, right: 32),
-                  child: SingleChildScrollView(
+                  child:  SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -61,7 +61,8 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         InputTextWidget(
                           label: "EMAIL",
-                          type: ImputTextType.email
+                          type: ImputTextType.email,
+                          onValidate: (value) => value.contains("@") ? null : "Email invalido"
                         ),
                         SizedBox(
                           height: 18 ,
@@ -69,6 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                         InputTextWidget(
                           label: "SENHA",
                           type: ImputTextType.password,
+                          onValidate: (value) => value.isEmpty ? "Não pode ser vazio!" : null,
                         ),
                         SizedBox(
                           height: 18 ,

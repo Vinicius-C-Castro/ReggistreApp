@@ -4,7 +4,7 @@ enum FlatButtonExpandedType{
   fill, none, outline
 }
 
-class FlatButtonExpanded extends StatelessWidget {
+class FlatButtonExpanded extends StatefulWidget {
   final String label;
   final FlatButtonExpandedType type;
   final VoidCallback onTap;
@@ -16,7 +16,7 @@ class FlatButtonExpanded extends StatelessWidget {
     this.type = FlatButtonExpandedType.fill,
   }) : super(key: key);
 
-  static const _config = {
+  static final _config = {
     FlatButtonExpandedType.fill: {
       "color": Colors.green,
       "textStyle": TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),
@@ -37,17 +37,25 @@ class FlatButtonExpanded extends StatelessWidget {
     },
   };
 
-  Color get backgroundColor => _config[type]['color'];
-  TextStyle get textStyle => _config[type]['textStyle'];
-  BoxBorder get border => _config[type]['border'];
-  double get height => _config[type]['height'];
+  @override
+  _FlatButtonExpandedState createState() => _FlatButtonExpandedState();
+}
+
+class _FlatButtonExpandedState extends State<FlatButtonExpanded> {
+  Color get backgroundColor => FlatButtonExpanded._config[widget.type]['color'];
+
+  TextStyle get textStyle => FlatButtonExpanded._config[widget.type]['textStyle'];
+
+  BoxBorder get border => FlatButtonExpanded._config[widget.type]['border'];
+
+  double get height => FlatButtonExpanded._config[widget.type]['height'];
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
     return InkWell(
-      onTap: onTap,
+      onTap: widget.onTap,
       child: Container(
         width: size.width,
         height: height,
@@ -58,7 +66,7 @@ class FlatButtonExpanded extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            label,
+            widget.label,
             style: textStyle,
           ),
         ),
