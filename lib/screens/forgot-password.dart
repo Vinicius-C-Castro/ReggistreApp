@@ -18,19 +18,19 @@ class ForgotPassword extends StatelessWidget {
           body: Column(
             children: [
               Flexible(
-                child: Center(
-                  child: Text(
-                    "Reggistre",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 60,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
+                // child: Center(
+                //   child: Text(
+                //     "Reggistre",
+                //     style: TextStyle(
+                //         color: Colors.white,
+                //         fontSize: 60,
+                //         fontWeight: FontWeight.bold),
+                //   ),
+                // ),
               ),
               Container(
                 width: size.width,
-                height: size.height * 0.45,
+                height: size.height * 1.0,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -42,9 +42,8 @@ class ForgotPassword extends StatelessWidget {
                     Center(
                       child: Column(
                         children: [
-
                           SizedBox(
-                            height: 38,
+                            height: 100,
                           ),
                           Text(
                             "Esqueceu a senha",
