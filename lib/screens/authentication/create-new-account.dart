@@ -80,7 +80,7 @@ class CreateNewAccount extends StatelessWidget {
                     SizedBox(
                       height: 25,
                     ),
-                    RoundedButton(buttonName: 'Criar conta', pushName: "/"),
+                    RoundedButton(buttonName: 'Criar conta'),
                     SizedBox(
                       height: 30,
                     ),
