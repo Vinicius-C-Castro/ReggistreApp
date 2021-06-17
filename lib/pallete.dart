@@ -13,6 +13,10 @@ TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.w700 );
 const TextStyle kTExtLabel =
 TextStyle(fontSize: 30, color: Colors.grey, fontWeight: FontWeight.w700 );
 
+const TextStyle kTextLabelMaster =
+TextStyle(fontSize: 50, color: Colors.white, fontWeight: FontWeight.w700 );
+
+
 const TextStyle kTExtLabelSub =
 TextStyle(fontSize: 18, color: Colors.grey, fontWeight: FontWeight.w700);
 

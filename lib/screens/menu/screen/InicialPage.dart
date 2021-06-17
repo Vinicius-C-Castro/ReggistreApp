@@ -20,9 +20,9 @@ class InicialPage extends StatefulWidget {
       color: Colors.pinkAccent,
     ),
     BarItem(
-      text: "Home",
+      text: "Movimentações",
       iconData:  Icons.home,
-      color: Colors.indigo,
+      color: Colors.green,
     ),
     
     BarItem(

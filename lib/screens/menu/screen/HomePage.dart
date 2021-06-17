@@ -10,6 +10,8 @@ import 'package:intl/date_symbol_data_file.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import '../../../pallete.dart';
+
 
 
 class HomePage extends StatefulWidget {
@@ -155,17 +157,15 @@ class _HomePageState extends State<HomePage> {
                       width: double.infinity,
                       height: height * 0.28, //250,
                       decoration: BoxDecoration(
-                        color: Colors.lightBlue[700], //Colors.indigo[400],
+                        color: Colors.green, //Colors.indigo[400],
                       )),
                 ),
                 Positioned(
                   top: width * 0.18, //70
                   left: width * 0.07, //30,
                   child: Text(
-                    "FinaCash",
-                    style: TextStyle(
-                        color: Colors.white, fontSize: width * 0.074 //30
-                        ),
+                    "Reggistre",
+                    style: kTextLabelMaster,
                   ),
                 ),
                 Positioned(
@@ -180,7 +180,7 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                              color: Colors.grey[400],
+                              color: Colors.grey,
                               blurRadius: 5,
                               offset: Offset(0, 2))
                         ]),
@@ -216,7 +216,7 @@ class _HomePageState extends State<HomePage> {
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                     color: Colors
-                                        .lightBlue[700], //Colors.indigo[400],
+                                  .lightBlue[700], //Colors.indigo[400],
                                     fontWeight: FontWeight.bold,
                                     fontSize: _saldoTamanho(saldoAtual),
                                         //width * 0.1 //_saldoTamanho(saldoAtual)
