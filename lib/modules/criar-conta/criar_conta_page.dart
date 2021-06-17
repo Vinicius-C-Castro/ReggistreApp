@@ -1,23 +1,21 @@
 import 'dart:ui';
 
-import 'package:ReggitreApp/modules/criar-conta/utils/criar_conta_validators.dart';
 import 'package:flutter/material.dart';
 
-import 'login_controller.dart';
-import 'utils/login_validators.dart';
+import 'criar_conta_controller.dart';
+import 'utils/criar_conta_validators.dart';
 import '../widgets/flat_button_expanded_widget.dart';
 import '../widgets/input_text_widget.dart';
-import '../criar-conta/criar_conta_page.dart';
 
-class LoginPage extends StatefulWidget {
-  LoginPage({Key key}) : super(key: key);
+class CriarConta extends StatefulWidget {
+  CriarConta({Key key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _CriarContaPageState createState() => _CriarContaPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  final controller = LoginController();
+class _CriarContaPageState extends State<CriarConta> {
+  final controller = CriarContaController();
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -50,19 +48,12 @@ class _LoginPageState extends State<LoginPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Bem vindo!",
+                        "Criar conta",
                         style: TextStyle(
                             fontWeight: FontWeight.w700, fontSize: 22),
                       ),
                       SizedBox(
                         height: 10,
-                      ),
-                      Text(
-                        "Mantenha suas despesas em dia!",
-                        style: TextStyle(
-                            color: Color(0xFF8F92A1),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w400),
                       ),
                       SizedBox(
                         height: 38,
@@ -72,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                           type: InputTextType.email,
                           onChange: (email) =>
                               controller.onChangeAndValidate(email: email),
-                          onValidate: LoginValidators.email),
+                          onValidate: CriarContaValidators.email),
                       SizedBox(
                         height: 18,
                       ),
@@ -81,7 +72,8 @@ class _LoginPageState extends State<LoginPage> {
                           type: InputTextType.password,
                           onChange: (password) => controller
                               .onChangeAndValidate(password: password),
-                          onValidate: LoginValidators.passsword),
+                          onValidate: CriarContaValidators.passsword),
+                      
                       SizedBox(
                         height: 18,
                       ),
@@ -89,32 +81,11 @@ class _LoginPageState extends State<LoginPage> {
                         valueListenable: controller.enabledButtonNotifer,
                         builder: (_, enabled, __) => enabled
                             ? FlatButtonExpandedWidget(
-                                label: "Login",
-                                onTap: () {},
-                              )
+                          label: "Criar Conta",
+                          onTap: () {},
+                        )
                             : Container(),
                       ),
-                      SizedBox(
-                        height: 18,
-                      ),
-                      FlatButtonExpandedWidget(
-                        type: FlatButtonExpandedType.none,
-                        label: "Esqueci minha senha",
-                        onTap: () {},
-                      ),
-                      SizedBox(
-                        height: 22,
-                      ),
-                      FlatButtonExpandedWidget(
-                        type: FlatButtonExpandedType.outline,
-                        label: "Cria uma conta",
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => CriarConta()),
-                          );
-                          },
-                      )
                     ],
                   ),
                 ),
