@@ -6,9 +6,11 @@ class RoundedButton extends StatelessWidget {
   const RoundedButton({
     Key key,
     @required this.buttonName,
+    this.pushName
   }) : super(key: key);
 
   final String buttonName;
+  final String pushName;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class RoundedButton extends StatelessWidget {
         color: kGreen,
       ),
       child: FlatButton(
-        onPressed: () {},
+        onPressed: () {Navigator.pushNamed(context, pushName);},
         child: Text(
           buttonName,
           style: kTextButton.copyWith(fontWeight: FontWeight.bold),

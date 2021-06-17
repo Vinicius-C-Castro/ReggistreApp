@@ -14,7 +14,7 @@ const TextStyle kTExtLabel =
 TextStyle(fontSize: 30, color: Colors.grey, fontWeight: FontWeight.w700 );
 
 const TextStyle kTExtLabelSub =
-TextStyle(fontSize: 18, color: Colors.grey, fontWeight: FontWeight.w700 );
+TextStyle(fontSize: 18, color: Colors.grey, fontWeight: FontWeight.w700);
 
 
 const Color kWhite = Colors.white;

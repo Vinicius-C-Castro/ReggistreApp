@@ -15,24 +15,6 @@ class ForgotPassword extends StatelessWidget {
       children: [
         Scaffold(
           backgroundColor: Colors.green,
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: Icon(
-                Icons.arrow_back_ios,
-                color: kWhite,
-              ),
-            ),
-            title: Text(
-              'Esqueceu a senha',
-              style: TextStyle(fontSize: 22, color: Colors.white, fontWeight: FontWeight.w700 ),
-            ),
-            centerTitle: true,
-          ),
           body: Column(
             children: [
               Flexible(
@@ -48,7 +30,7 @@ class ForgotPassword extends StatelessWidget {
               ),
               Container(
                 width: size.width,
-                height: size.height * 0.55,
+                height: size.height * 0.45,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -60,18 +42,26 @@ class ForgotPassword extends StatelessWidget {
                     Center(
                       child: Column(
                         children: [
+
                           SizedBox(
-                            height: size.height * 0.1,
+                            height: 38,
+                          ),
+                          Text(
+                            "Esqueceu a senha",
+                            style: kTExtLabel,
+                          ),
+                          SizedBox(
+                            height: 10,
                           ),
                           Container(
                             width: size.width * 0.8,
                             child: Text(
                               'Entre com seu email e enviaremos intruções de como alterar sua senha',
-                              style: kBodyText,
+                              style: kTExtLabelSub,
                             ),
                           ),
                           SizedBox(
-                            height: 20,
+                            height: 10,
                           ),
                           TextInputField(
                             icon: FontAwesomeIcons.envelope,
@@ -82,7 +72,7 @@ class ForgotPassword extends StatelessWidget {
                           SizedBox(
                             height: 20,
                           ),
-                          RoundedButton(buttonName: 'Enviar')
+                          RoundedButton(buttonName: 'Enviar', pushName: "/"),
                         ],
                       ),
                     )
