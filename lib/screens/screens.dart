@@ -1,3 +1,3 @@
-export 'login-screen.dart';
-export 'forgot-password.dart';
-export 'create-new-account.dart';
+export 'authentication/login-screen.dart';
+export 'authentication/forgot-password.dart';
+export 'authentication/create-new-account.dart';

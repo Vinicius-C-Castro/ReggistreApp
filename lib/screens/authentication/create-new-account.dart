@@ -6,7 +6,7 @@ import 'package:ReggitreApp/widgets/rounded-button.dart';
 import 'package:ReggitreApp/widgets/text-field-input.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../pallete.dart';
+import '../../pallete.dart';
 
 class CreateNewAccount extends StatelessWidget {
   @override
