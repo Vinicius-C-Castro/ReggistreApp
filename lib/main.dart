@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'modules/login/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'screens/screens.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,9 +13,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Reggistre',
       theme: ThemeData(
+        textTheme:
+            GoogleFonts.josefinSansTextTheme(Theme.of(context).textTheme),
         primarySwatch: Colors.green,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginPage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LoginScreen(),
+        'ForgotPassword': (context) => ForgotPassword(),
+        'CreateNewAccount': (context) => CreateNewAccount(),
+      },
     );
   }
 }
