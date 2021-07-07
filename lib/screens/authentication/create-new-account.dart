@@ -6,7 +6,7 @@ import 'package:ReggitreApp/widgets/rounded-button.dart';
 import 'package:ReggitreApp/widgets/text-field-input.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../pallete.dart';
+import '../../pallete.dart';
 
 class CreateNewAccount extends StatelessWidget {
   @override
@@ -80,7 +80,7 @@ class CreateNewAccount extends StatelessWidget {
                     SizedBox(
                       height: 25,
                     ),
-                    RoundedButton(buttonName: 'Criar conta', pushName: "/"),
+                    RoundedButton(buttonName: 'Criar conta'),
                     SizedBox(
                       height: 30,
                     ),

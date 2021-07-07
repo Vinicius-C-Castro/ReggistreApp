@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../pallete.dart';
+import '../../pallete.dart';
 
 
 class ForgotPassword extends StatelessWidget {
@@ -17,7 +17,7 @@ class ForgotPassword extends StatelessWidget {
           backgroundColor: Colors.green,
           body: Column(
             children: [
-              Flexible(
+              // Flexible(
                 // child: Center(
                 //   child: Text(
                 //     "Reggistre",
@@ -27,7 +27,7 @@ class ForgotPassword extends StatelessWidget {
                 //         fontWeight: FontWeight.bold),
                 //   ),
                 // ),
-              ),
+              // ),
               Container(
                 width: size.width,
                 height: size.height * 1.0,
@@ -71,7 +71,7 @@ class ForgotPassword extends StatelessWidget {
                           SizedBox(
                             height: 20,
                           ),
-                          RoundedButton(buttonName: 'Enviar', pushName: "/"),
+                          RoundedButton(buttonName: 'Enviar'),
                         ],
                       ),
                     )

@@ -1,15 +1,17 @@
-import 'package:ReggitreApp/widgets/background-image.dart';
+import 'package:ReggitreApp/screens/menu/screen/InicialPage.dart';
 import 'package:ReggitreApp/widgets/password-input.dart';
 import 'package:ReggitreApp/widgets/rounded-button.dart';
 import 'package:ReggitreApp/widgets/text-field-input.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../pallete.dart';
+import 'package:intl/date_symbol_data_file.dart';
+import '../../pallete.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+
     return Stack(
       children: [
         Scaffold(
@@ -78,7 +80,7 @@ class LoginScreen extends StatelessWidget {
                       height: 25,
                     ),
                     RoundedButton(
-                      buttonName: 'Login',
+                      buttonName: 'Login', pushName: "InicialPage",
                     ),
                     SizedBox(
                       height: 25,

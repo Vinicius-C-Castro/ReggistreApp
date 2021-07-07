@@ -1,9 +1,17 @@
+
+import 'package:ReggitreApp/screens/authentication/create-new-account.dart';
+import 'package:ReggitreApp/screens/authentication/forgot-password.dart';
+import 'package:ReggitreApp/screens/authentication/login-screen.dart';
+import 'package:ReggitreApp/screens/menu/screen/HomePage.dart';
+import 'package:ReggitreApp/screens/menu/screen/InicialPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'screens/screens.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
-void main() {
-  runApp(MyApp());
+main() {
+  initializeDateFormatting().then((_){
+    runApp(MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -14,7 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Reggistre',
       theme: ThemeData(
         textTheme:
-            GoogleFonts.josefinSansTextTheme(Theme.of(context).textTheme),
+        GoogleFonts.josefinSansTextTheme(Theme.of(context).textTheme),
         primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
@@ -23,6 +31,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => LoginScreen(),
         'ForgotPassword': (context) => ForgotPassword(),
         'CreateNewAccount': (context) => CreateNewAccount(),
+        'InicialPage': (context) => InicialPage(),
+        'HomePage': (context) => HomePage(),
       },
     );
   }
