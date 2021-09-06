@@ -32,7 +32,7 @@ class TimeLineItem extends StatelessWidget {
                     width: width * 0.03,
                     height: height * 0.015,
                     decoration: BoxDecoration(
-                        color: colorItem,//Colors.red[900],
+                        color: colorItem,
                         borderRadius: BorderRadius.circular(10)),
                   ),
                   Padding(

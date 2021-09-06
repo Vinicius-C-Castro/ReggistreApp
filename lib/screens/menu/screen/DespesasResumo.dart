@@ -2,6 +2,8 @@ import 'package:ReggitreApp/screens/menu/Helper/Movimentacoes_helper.dart';
 import 'package:ReggitreApp/screens/menu/Widgets/TimeLineItem.dart';
 import 'package:flutter/material.dart';
 
+import '../../../pallete.dart';
+
 
 class DespesasResumo extends StatefulWidget {
   @override
@@ -35,7 +37,7 @@ class _DespesasResumoState extends State<DespesasResumo> {
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Colors.redAccent.withOpacity(0.8),
+      backgroundColor: reggistreCollorRed,
       body: SingleChildScrollView(
         physics: ClampingScrollPhysics(),
         child: Column(
@@ -44,7 +46,7 @@ class _DespesasResumoState extends State<DespesasResumo> {
             Padding(
               padding: EdgeInsets.only(left: width * 0.05,top: width * 0.2),
               child: Text("Despesas",style: TextStyle(
-                color: Colors.white ,//Colors.grey[400],
+                color: Colors.white ,
                 fontWeight: FontWeight.bold,
                 fontSize: width * 0.08
               ),),
@@ -62,9 +64,9 @@ class _DespesasResumoState extends State<DespesasResumo> {
                     Movimentacoes mov = movReverse[index];
                     
                     if(movReverse[index] == movReverse.last){
-                      return TimeLineItem(mov: mov, colorItem: Colors.red[900],isLast: true,);
+                      return TimeLineItem(mov: mov, colorItem: reggistreCollorRed,isLast: true,);
                     }else{
-                      return TimeLineItem(mov: mov,colorItem: Colors.red[900],isLast: false,);
+                      return TimeLineItem(mov: mov,colorItem: reggistreCollorRed,isLast: false,);
                     }
                     
                   },

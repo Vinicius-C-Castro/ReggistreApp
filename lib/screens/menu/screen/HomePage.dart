@@ -157,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                       width: double.infinity,
                       height: height * 0.28, //250,
                       decoration: BoxDecoration(
-                        color: Colors.green, //Colors.indigo[400],
+                        color: reggistreCollorGreen,
                       )),
                 ),
                 Positioned(
@@ -372,7 +372,7 @@ class _HomePageState extends State<HomePage> {
                       background: Container(
                         padding: EdgeInsets.only(right: 10 ,top: width * 0.04),
                         alignment: Alignment.topRight,
-                        color: Colors.red,
+                        color: reggistreCollorRed,
                         child: Icon(
                           Icons.delete_outline,
                           color: Colors.white,

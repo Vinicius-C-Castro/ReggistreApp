@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Reggistre',
       theme: ThemeData(
         textTheme:
-        GoogleFonts.josefinSansTextTheme(Theme.of(context).textTheme),
+        GoogleFonts.latoTextTheme(),
         primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

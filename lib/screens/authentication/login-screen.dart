@@ -15,7 +15,7 @@ class LoginScreen extends StatelessWidget {
     return Stack(
       children: [
         Scaffold(
-          backgroundColor: Colors.green,
+          backgroundColor: reggistreCollorGreen,
           body: Column(
             children: [
               Flexible(

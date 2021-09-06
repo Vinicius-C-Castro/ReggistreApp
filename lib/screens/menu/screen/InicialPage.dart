@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 
 import 'package:table_calendar/table_calendar.dart';
 
+import '../../../pallete.dart';
 import 'DespesasResumo.dart';
 import 'HomePage.dart';
 import 'ReceitasResumo.dart';
@@ -17,18 +18,18 @@ class InicialPage extends StatefulWidget {
     BarItem(
       text: "Despesas",
       iconData: Icons.remove_circle_outline,
-      color: Colors.pinkAccent,
+      color: reggistreCollorRed,
     ),
     BarItem(
       text: "Movimentações",
       iconData:  Icons.home,
-      color: Colors.green,
+      color: reggistreCollorBlue,
     ),
     
     BarItem(
       text: "Receitas",
       iconData: Icons.add_circle_outline,
-      color: Colors.teal,
+      color: reggistreCollorGreen,
     ),
     /*BarItem(
       text: "Search",

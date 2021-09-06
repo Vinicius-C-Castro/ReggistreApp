@@ -3,6 +3,8 @@ import 'package:ReggitreApp/screens/menu/Helper/Movimentacoes_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../../../pallete.dart';
+
 class CustomDialog extends StatefulWidget {
 
   final Movimentacoes mov;
@@ -17,8 +19,8 @@ class _CustomDialogState extends State<CustomDialog> {
   bool edit;
   
   int _groupValueRadio = 1;
-  Color _colorContainer = Colors.green[400];
-  Color _colorTextButtom = Colors.green;
+  Color _colorContainer = reggistreCollorBlue;
+  Color _colorTextButtom = reggistreCollorGrey;
   TextEditingController _controllerValor = TextEditingController();
   TextEditingController _controllerDesc = TextEditingController();
 
@@ -35,8 +37,8 @@ class _CustomDialogState extends State<CustomDialog> {
       edit = true;
       if(widget.mov.tipo == "d"){ 
         _groupValueRadio =2;
-        _colorContainer = Colors.red[300];
-        _colorTextButtom = Colors.red[300];
+        _colorContainer = reggistreCollorRed;
+        _colorTextButtom = reggistreCollorRed;
         }
       
       _controllerValor.text = widget.mov.valor.toString().replaceAll("-", "");
@@ -54,7 +56,7 @@ class _CustomDialogState extends State<CustomDialog> {
     return AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(width * 0.050)),
         title: Text(
-          "Adicionar Valores",
+          "Adicionar Movimentação",
           textAlign: TextAlign.center,
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
@@ -65,11 +67,6 @@ class _CustomDialogState extends State<CustomDialog> {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Text(
-                    "R\$ ",
-                    style:
-                        TextStyle(color: Colors.white, fontSize: width * 0.06),
-                  ),
                   Flexible(
                     child: TextField(
                         controller: _controllerValor,
@@ -80,13 +77,10 @@ class _CustomDialogState extends State<CustomDialog> {
                         maxLines: 1,
                         textAlign: TextAlign.end,
                         decoration: new InputDecoration(
+                          labelText: "R\$",
+                          labelStyle: TextStyle(color: Colors.white),
                           hintText: "0.00",
                           hintStyle: TextStyle(color: Colors.white54),
-                          contentPadding:  EdgeInsets.only(
-                              left: width * 0.04, 
-                              top: width * 0.041, 
-                              bottom: width * 0.041, 
-                              right: width * 0.04),//15),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(width * 0.04),
                             borderSide: BorderSide(
@@ -108,43 +102,43 @@ class _CustomDialogState extends State<CustomDialog> {
               Row(
                 children: <Widget>[
                   Radio(
-                    activeColor: Colors.green[900],
+                    activeColor: reggistreCollorGrey,
                     value: 1,
                     groupValue: _groupValueRadio,
                     onChanged: (value) {
                       print(value);
                       setState(() {
                         _groupValueRadio = value;
-                        _colorContainer = Colors.green[400];
-                        _colorTextButtom = Colors.green;
                       });
                     },
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: width * 0.01),
-                    child: Text("receita"),
+                    child: Text("Receita"),
                   )
                 ],
               ),
               Row(
                 children: <Widget>[
                   Radio(
-                    activeColor: Colors.red[900],
+                    activeColor: reggistreCollorGrey,
                     value: 2,
                     groupValue: _groupValueRadio,
                     onChanged: (value) {
                       print(value);
                       setState(() {
                         _groupValueRadio = value;
-                        _colorContainer = Colors.red[300];
-                        _colorTextButtom = Colors.red[300];
                       });
                     },
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: width * 0.01),
-                    child: Text("despesa"),
+                    child: Text("Despesa"),
                   )
+                ],
+              ),
+              Row(
+                children: <Widget>[
                 ],
               ),
               TextField(
@@ -155,16 +149,8 @@ class _CustomDialogState extends State<CustomDialog> {
                   maxLines: 1,
                   textAlign: TextAlign.start,
                   decoration: new InputDecoration(
-                    //hintText: "descrição",
                     labelText: "Descrição",
-                    labelStyle: TextStyle(color: Colors.white54),
-                    //hintStyle: TextStyle(color: Colors.grey[400]),
-                    contentPadding:  EdgeInsets.only(
-                        left: width * 0.04, 
-                        top: width * 0.041, 
-                        bottom: width * 0.041, 
-                        right: width * 0.04),
-
+                    labelStyle: TextStyle(color: Colors.white),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(width * 0.04),
                       borderSide: BorderSide(

@@ -3,6 +3,7 @@
 import 'package:ReggitreApp/screens/menu/Helper/Movimentacoes_helper.dart';
 import 'package:flutter/material.dart';
 
+import '../../../pallete.dart';
 import 'CustomDialog.dart';
 
 class CardMovimentacoesItem extends StatelessWidget {
@@ -28,8 +29,8 @@ class CardMovimentacoesItem extends StatelessWidget {
             children: <Widget>[
               SizedBox(height: 20,),
               
-              Text("${mov.descricao}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: width * 0.045,color:mov.tipo.toString() =="r" ?Colors.green[600] : Colors.red[600])),
-              Text("R\$ ${mov.valor}",style: TextStyle(fontWeight: FontWeight.bold,color: mov.tipo.toString() =="r" ?Colors.green[600] : Colors.red[600])),
+              Text("${mov.descricao}",style: TextStyle(fontWeight: FontWeight.bold,fontSize: width * 0.045,color:mov.tipo.toString() =="r" ?reggistreCollorGreen : reggistreCollorRed)),
+              Text("R\$ ${mov.valor}",style: TextStyle(fontWeight: FontWeight.bold,color: mov.tipo.toString() =="r" ?reggistreCollorGreen : reggistreCollorRed)),
                 
               
               SizedBox(height: 40,),
@@ -44,7 +45,7 @@ class CardMovimentacoesItem extends StatelessWidget {
                       },
                       child: Text(
                         "Cancelar",
-                        style: TextStyle(color: Colors.red[700]),
+                        style: TextStyle(color: reggistreCollorRed),
                       ),
                     ),
                     GestureDetector(
@@ -61,7 +62,7 @@ class CardMovimentacoesItem extends StatelessWidget {
                             right: width * 0.03),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Colors.red[700],
+                          color: reggistreCollorRed,
                         ),
                         child: Center(
                           child: Text(
@@ -130,8 +131,8 @@ class CardMovimentacoesItem extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.all(width * 0.03),
               child:mov.tipo == "r" 
-              ? Icon(Icons.arrow_downward,color: Colors.green,size: width * 0.06,)
-              : Icon(Icons.arrow_upward,color: Colors.red, size:width * 0.06)
+              ? Icon(Icons.arrow_downward,color: reggistreCollorGreen,size: width * 0.06,)
+              : Icon(Icons.arrow_upward,color: reggistreCollorRed, size:width * 0.06)
             ),
           ),
           Padding(
@@ -139,7 +140,7 @@ class CardMovimentacoesItem extends StatelessWidget {
             child: Container(
               width: width * 0.4,
               child: Text(mov.descricao,overflow: TextOverflow.ellipsis, textAlign: TextAlign.start, style: TextStyle(
-              color:mov.tipo == "r" ? Colors.green[700]:Colors.red[700],
+              color:mov.tipo == "r" ? reggistreCollorGreen:reggistreCollorRed,
               fontWeight: FontWeight.bold,
               fontSize: width * 0.044,            
             ),),
@@ -148,7 +149,7 @@ class CardMovimentacoesItem extends StatelessWidget {
             ],
           ),
           Text(mov.tipo == "r" ? "+ ${mov.valor}" :" ${mov.valor}", style: TextStyle(
-            color: mov.tipo == "r" ? Colors.green[700] : Colors.red[700],
+            color: mov.tipo == "r" ? reggistreCollorGreen : reggistreCollorRed,
             fontWeight: FontWeight.bold,
             fontSize: width * 0.044,
             

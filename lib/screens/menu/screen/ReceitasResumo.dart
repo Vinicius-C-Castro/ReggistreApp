@@ -3,6 +3,8 @@ import 'package:ReggitreApp/screens/menu/Helper/Movimentacoes_helper.dart';
 import 'package:ReggitreApp/screens/menu/Widgets/TimeLineItem.dart';
 import 'package:flutter/material.dart';
 
+import '../../../pallete.dart';
+
 class ReceitasResumo extends StatefulWidget {
   @override
   _ReceitasResumoState createState() => _ReceitasResumoState();
@@ -36,7 +38,7 @@ class _ReceitasResumoState extends State<ReceitasResumo> {
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Colors.green.withOpacity(0.8),
+      backgroundColor: reggistreCollorGreen,
       body: SingleChildScrollView(
         physics: ClampingScrollPhysics(),
         child: Column(
@@ -64,9 +66,9 @@ class _ReceitasResumoState extends State<ReceitasResumo> {
 
                     
                     if(movReverse[index] == movReverse.last){
-                      return TimeLineItem(mov: mov, colorItem: Colors.green[900],isLast: true,);
+                      return TimeLineItem(mov: mov, colorItem: reggistreCollorGreen,isLast: true,);
                     }else{
-                      return TimeLineItem(mov: mov,colorItem: Colors.green[900],isLast: false,);
+                      return TimeLineItem(mov: mov,colorItem: reggistreCollorGreen,isLast: false,);
                     }
                     
                   },
