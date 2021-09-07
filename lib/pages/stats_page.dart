@@ -143,8 +143,7 @@ class _StatsPageState extends State<StatsPage> {
                             "Saldo",
                             style: TextStyle(
                                 fontWeight: FontWeight.w500,
-                                fontSize: 13,
-                                color: Color(0xff67727d)),
+                                fontSize: 13)
                           ),
                           SizedBox(
                             height: 10,
@@ -180,8 +179,8 @@ class _StatsPageState extends State<StatsPage> {
           Wrap(
             spacing: 20,
             children: [
-              _receitaDespesaCard(size, Icons.arrow_upward_rounded, Colors.green,"Receitas", "R\$6593.75"),
-              _receitaDespesaCard(size, Icons.arrow_downward_rounded, Colors.red, "Despesas", "R\$1143.21"),
+              _receitaDespesaCard(size, Icons.arrow_upward_rounded, green,"Receitas", "R\$6593.75"),
+              _receitaDespesaCard(size, Icons.arrow_downward_rounded, red, "Despesas", "R\$1143.21"),
             ],
           )
         ],

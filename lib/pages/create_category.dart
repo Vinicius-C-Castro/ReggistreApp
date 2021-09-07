@@ -183,36 +183,5 @@ class _CreatCategoryPageState extends State<CreateCategoryPage> {
       ),
     );
   }
-
-  Widget _icon(int index, {String text, IconData icon}) {
-    return Container(
-      width: 100,
-      height: 100,
-      decoration: BoxDecoration(
-          color: (index == _value ? (index == 0 ? Colors.green : Colors.red) : Colors.grey),
-          borderRadius: BorderRadius.circular(15)),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: InkResponse(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(
-                icon,
-                color: _value == index ? Colors.black : null,
-                size: 40,
-              ),
-              Text(text, style: TextStyle(color: _value == index ? Colors.black : null)),
-            ],
-          ),
-          onTap: () => setState(
-                () {
-              _value = index;
-            },
-          ),
-        ),
-      ),
-    );
-  }
 }
 

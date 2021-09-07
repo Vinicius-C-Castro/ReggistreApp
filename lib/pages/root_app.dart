@@ -78,9 +78,9 @@ class _RootAppState extends State<RootApp> {
       icons: iconItems,
       activeIndex: pageIndex,
       gapLocation: GapLocation.center,
-      notchSmoothness: NotchSmoothness.softEdge,
+      notchSmoothness: NotchSmoothness.verySmoothEdge,
       leftCornerRadius: 10,
-      iconSize: 25,
+      iconSize: 30,
       rightCornerRadius: 10,
       onTap: (index) {
         selectedTab(index);
@@ -96,7 +96,6 @@ class _RootAppState extends State<RootApp> {
       } else {
         pageIndex = index;
       }
-
     });
   }
 }

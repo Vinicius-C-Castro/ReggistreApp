@@ -6,8 +6,8 @@ const Color black = Color(0xFF000000);
 const Color white = Color(0xFFFFFFFF);
 // const Color grey = Colors.grey;
 // const Color red = Color(0xFFec5766);
-const Color green = Color(0xFF43aa8b);
-const Color blue = Color(0xFF28c2ff);
+const Color green = Color.fromRGBO(136, 196, 36, 1);
+const Color blue = Color.fromRGBO(37, 89, 164, 1);
 
 const Color secondary = Color.fromRGBO(136, 196, 36, 1);
 

@@ -1,3 +1,4 @@
+import 'package:ReggitreApp/theme/colors.dart';
 import 'package:flutter/material.dart';
 import '../pallete.dart';
 
@@ -39,7 +40,7 @@ class TextInputField extends StatelessWidget {
                 child: Icon(
                   icon,
                   size: 22,
-                  color: Colors.grey,
+                  color: grey,
                 ),
               ),
               hintText: hint,

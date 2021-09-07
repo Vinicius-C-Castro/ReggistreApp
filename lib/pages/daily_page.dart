@@ -176,7 +176,7 @@ class _DailyPageState extends State<DailyPage> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 15,
-                                  color: Colors.green),
+                                  color: green),
                             ),
                           ],
                         ),

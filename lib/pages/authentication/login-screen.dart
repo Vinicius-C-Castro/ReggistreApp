@@ -79,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                       height: 25,
                     ),
                     RoundedButton(
-                      buttonName: 'Login', pushName: "InicialPage",
+                      buttonName: 'Login', pushName: "HomePage",
                     ),
                     SizedBox(
                       height: 25,

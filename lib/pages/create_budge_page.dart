@@ -262,7 +262,7 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
       width: 100,
       height: 100,
       decoration: BoxDecoration(
-          color: (index == _value ? (index == 0 ? Colors.green : Colors.red) : Colors.grey),
+          color: (index == _value ? (index == 0 ? secondary : red) : grey),
           borderRadius: BorderRadius.circular(15)),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -272,10 +272,10 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
             children: [
               Icon(
                 icon,
-                color: _value == index ? Colors.black : null,
+                color: Colors.white,
                 size: 40,
               ),
-              Text(text, style: TextStyle(color: _value == index ? Colors.black : null)),
+              Text(text, style: TextStyle(color: Colors.white)),
             ],
           ),
           onTap: () => setState(
