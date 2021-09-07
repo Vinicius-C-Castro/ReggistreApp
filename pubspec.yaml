@@ -16,6 +16,10 @@ dependencies:
   sqflite: ^1.1.7+2
   table_calendar: ^2.2.2
   intl: ^0.16.1
+  fl_chart: ^0.40.0
+  percent_indicator: "^2.1.7+2"
+  animated_bottom_navigation_bar: ^0.3.2
+  ionicons: ^0.1.2
 
 dev_dependencies:
   flutter_test:
@@ -27,4 +31,6 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  assets:
+    - assets/images/
   # To add assets to your application, add an assets section, like this:

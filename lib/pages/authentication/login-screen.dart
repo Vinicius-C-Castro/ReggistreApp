@@ -1,7 +1,6 @@
-import 'package:ReggitreApp/screens/menu/screen/InicialPage.dart';
-import 'package:ReggitreApp/widgets/password-input.dart';
-import 'package:ReggitreApp/widgets/rounded-button.dart';
-import 'package:ReggitreApp/widgets/text-field-input.dart';
+import 'package:ReggitreApp/widget/password-input.dart';
+import 'package:ReggitreApp/widget/rounded-button.dart';
+import 'package:ReggitreApp/widget/text-field-input.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/date_symbol_data_file.dart';

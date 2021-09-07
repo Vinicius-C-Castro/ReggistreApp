@@ -1,5 +1,5 @@
-import 'package:ReggitreApp/widgets/rounded-button.dart';
-import 'package:ReggitreApp/widgets/text-field-input.dart';
+import 'package:ReggitreApp/widget/rounded-button.dart';
+import 'package:ReggitreApp/widget/text-field-input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
