@@ -22,7 +22,7 @@ class _RootAppState extends State<RootApp> {
     StatsPage(),
     BudgetPage(),
     ProfilePage(),
-    CreatBudgetPage()
+    CreatBudgetPage(),
   ];
 
   @override
@@ -49,7 +49,7 @@ class _RootAppState extends State<RootApp> {
               Icons.add,
               size: 25,
             ),
-            backgroundColor: Colors.pink
+            backgroundColor: primary
             //params
             ),
         floatingActionButtonLocation:
@@ -91,7 +91,12 @@ class _RootAppState extends State<RootApp> {
 
   selectedTab(index) {
     setState(() {
-      pageIndex = index;
+      if (index != 2) {
+        pageIndex = index;
+      } else {
+        pageIndex = index;
+      }
+
     });
   }
 }

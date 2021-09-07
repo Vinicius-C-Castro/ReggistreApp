@@ -4,6 +4,8 @@ import '/json/create_budget_json.dart';
 import '/theme/colors.dart';
 import 'package:flutter/material.dart';
 
+import 'create_category.dart';
+
 class CreatBudgetPage extends StatefulWidget {
   @override
   _CreatBudgetPageState createState() => _CreatBudgetPageState();
@@ -62,13 +64,45 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
-            child: Text(
-              "Categoria",
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: black.withOpacity(0.5)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Categorias",
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: black.withOpacity(0.5)),
+                ),
+                Row(
+                  children: [
+                    FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => CreateCategoryPage()),
+                        );
+                      },
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        children: <Widget>[
+                          Text("Criar Categoria", style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          )),
+                          SizedBox(width: 6),
+                          Icon(Icons.add),
+                        ],
+                      ),
+                    ),
+                  ],
+                )
+              ],
             ),
+
           ),
           SizedBox(
             height: 20,
@@ -203,7 +237,7 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
                   ],
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

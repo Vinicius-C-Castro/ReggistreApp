@@ -1,7 +1,6 @@
 import '/json/day_month.dart';
 import '/theme/colors.dart';
 import '/widget/chart.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
@@ -25,20 +24,6 @@ class _StatsPageState extends State<StatsPage> {
   Widget getBody() {
     var size = MediaQuery.of(context).size;
 
-    List expenses = [
-      {
-        "icon": Icons.arrow_back,
-        "color": blue,
-        "label": "Income",
-        "cost": "R\$6593.75"
-      },
-      {
-        "icon": Icons.arrow_forward,
-        "color": red,
-        "label": "Expense",
-        "cost": "R\$2645.50"
-      }
-    ];
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -60,7 +45,7 @@ class _StatsPageState extends State<StatsPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Stats",
+                        "Estatística",
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -155,7 +140,7 @@ class _StatsPageState extends State<StatsPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Net balance",
+                            "Saldo",
                             style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 13,
@@ -193,69 +178,74 @@ class _StatsPageState extends State<StatsPage> {
             height: 20,
           ),
           Wrap(
-              spacing: 20,
-              children: List.generate(expenses.length, (index) {
-                return Container(
-                  width: (size.width - 60) / 2,
-                  height: 170,
-                  decoration: BoxDecoration(
-                      color: white,
-                      borderRadius: BorderRadius.circular(12),
-                      boxShadow: [
-                        BoxShadow(
-                          color: grey.withOpacity(0.01),
-                          spreadRadius: 10,
-                          blurRadius: 3,
-                          // changes position of shadow
-                        ),
-                      ]),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                        left: 25, right: 25, top: 20, bottom: 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 40,
-                          height: 40,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: expenses[index]['color']),
-                          child: Center(
-                              child: Icon(
-                            expenses[index]['icon'],
-                            color: white,
-                          )),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              expenses[index]['label'],
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 13,
-                                  color: Color(0xff67727d)),
-                            ),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            Text(
-                              expenses[index]['cost'],
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                );
-              }))
+            spacing: 20,
+            children: [
+              _receitaDespesaCard(size, Icons.arrow_upward_rounded, Colors.green,"Receitas", "R\$6593.75"),
+              _receitaDespesaCard(size, Icons.arrow_downward_rounded, Colors.red, "Despesas", "R\$1143.21"),
+            ],
+          )
         ],
+      ),
+    );
+  }
+
+  Widget _receitaDespesaCard(Size size, IconData icon, Color color, String nome, String valor) {
+    return Container(
+      width: (size.width - 60) / 2,
+      height: 170,
+      decoration: BoxDecoration(
+          color: white,
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: grey.withOpacity(0.01),
+              spreadRadius: 10,
+              blurRadius: 3,
+              // changes position of shadow
+            ),
+          ]),
+      child: Padding(
+        padding: const EdgeInsets.only(
+            left: 25, right: 25, top: 20, bottom: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle, color: color),
+              child: Center(
+                  child: Icon(
+                    icon,
+                    color: white,
+                  )),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  nome,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13,
+                      color: Color(0xff67727d)),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  valor,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
