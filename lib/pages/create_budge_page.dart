@@ -1,6 +1,10 @@
+import 'package:moneytextformfield/moneytextformfield.dart';
+
 import '/json/create_budget_json.dart';
 import '/theme/colors.dart';
 import 'package:flutter/material.dart';
+
+import 'create_category.dart';
 
 class CreatBudgetPage extends StatefulWidget {
   @override
@@ -9,9 +13,11 @@ class CreatBudgetPage extends StatefulWidget {
 
 class _CreatBudgetPageState extends State<CreatBudgetPage> {
   int activeCategory = 0;
+  int _value = 0;
   TextEditingController _budgetName =
-      TextEditingController(text: "Grocery Budget");
-  TextEditingController _budgetPrice = TextEditingController(text: "R\$1500.00");
+      TextEditingController(text: "");
+  TextEditingController _budgetPrice = TextEditingController(text: "");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +50,7 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Create budget",
+                        "Adicionar Movimentação",
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -58,13 +64,45 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
-            child: Text(
-              "Choose category",
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: black.withOpacity(0.5)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Categorias",
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: black.withOpacity(0.5)),
+                ),
+                Row(
+                  children: [
+                    FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => CreateCategoryPage()),
+                        );
+                      },
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        children: <Widget>[
+                          Text("Criar Categoria", style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          )),
+                          SizedBox(width: 6),
+                          Icon(Icons.add),
+                        ],
+                      ),
+                    ),
+                  ],
+                )
+              ],
             ),
+
           ),
           SizedBox(
             height: 20,
@@ -150,7 +188,7 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "budget name",
+                  "Descrição",
                   style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 13,
@@ -161,8 +199,6 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
                   cursorColor: black,
                   style: TextStyle(
                       fontSize: 17, fontWeight: FontWeight.bold, color: black),
-                  decoration: InputDecoration(
-                      hintText: "Enter Budget Name", border: InputBorder.none),
                 ),
                 SizedBox(
                   height: 20,
@@ -171,27 +207,26 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      width: (size.width - 140),
+                      width: (size.width - 300),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "Enter budget",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 13,
-                                color: Color(0xff67727d)),
-                          ),
-                          TextField(
-                            controller: _budgetPrice,
-                            cursorColor: black,
-                            style: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.bold,
-                                color: black),
-                            decoration: InputDecoration(
-                                hintText: "Enter Budget",
-                                border: InputBorder.none),
+                          MoneyTextFormField(
+                              settings: MoneyTextFormFieldSettings(
+                                controller: _budgetPrice,
+                                moneyFormatSettings: MoneyFormatSettings(
+                                  displayFormat: MoneyDisplayFormat.symbolOnLeft,
+                                  currencySymbol: "R\$",
+                                  fractionDigits: 2,),
+                                appearanceSettings: AppearanceSettings(
+                                  labelText: "Valor",
+                                  formattedStyle: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.bold,
+                                      color: black),),
+                              )
+                            // decoration: InputDecoration(
+                            //     prefixText: "R\$ "),
                           ),
                         ],
                       ),
@@ -199,19 +234,21 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
                     SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                          color: primary,
-                          borderRadius: BorderRadius.circular(15)),
-                      child: Icon(
-                        Icons.arrow_forward,
-                        color: white,
-                      ),
-                    ),
                   ],
-                )
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    _icon(0, text: "Receita", icon: Icons.arrow_upward_rounded),
+                    SizedBox(
+                      width: 50,
+                    ),
+                    _icon(1, text: "Despesa", icon: Icons.arrow_downward_rounded),
+                  ],
+                ),
               ],
             ),
           )
@@ -219,4 +256,36 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
       ),
     );
   }
+
+  Widget _icon(int index, {String text, IconData icon}) {
+    return Container(
+      width: 100,
+      height: 100,
+      decoration: BoxDecoration(
+          color: (index == _value ? (index == 0 ? secondary : red) : grey),
+          borderRadius: BorderRadius.circular(15)),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: InkResponse(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                icon,
+                color: Colors.white,
+                size: 40,
+              ),
+              Text(text, style: TextStyle(color: Colors.white)),
+            ],
+          ),
+          onTap: () => setState(
+                () {
+                  _value = index;
+            },
+          ),
+        ),
+      ),
+    );
+  }
 }
+

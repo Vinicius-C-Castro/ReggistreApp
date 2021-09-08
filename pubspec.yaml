@@ -15,11 +15,13 @@ dependencies:
   google_fonts: ^1.1.1
   sqflite: ^1.1.7+2
   table_calendar: ^2.2.2
-  intl: ^0.16.1
+  intl: ^0.15.8
   fl_chart: ^0.40.0
   percent_indicator: "^2.1.7+2"
   animated_bottom_navigation_bar: ^0.3.2
   ionicons: ^0.1.2
+  moneytextformfield: ^0.3.5+1
+  flutter_money_formatter: ^0.8.3
 
 dev_dependencies:
   flutter_test:
@@ -33,4 +35,6 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/icons/
+    - assets/
   # To add assets to your application, add an assets section, like this:

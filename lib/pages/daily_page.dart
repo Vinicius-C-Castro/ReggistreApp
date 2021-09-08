@@ -41,7 +41,7 @@ class _DailyPageState extends State<DailyPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Daily Transaction",
+                        "Movimentações",
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -176,7 +176,7 @@ class _DailyPageState extends State<DailyPage> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 15,
-                                  color: Colors.green),
+                                  color: green),
                             ),
                           ],
                         ),

@@ -57,46 +57,46 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                   Row(
                     children: [
-                      Container(
-                        width: (size.width - 40) * 0.4,
-                        child: Container(
-                          child: Stack(
-                            children: [
-                              RotatedBox(
-                                quarterTurns: -2,
-                                child: CircularPercentIndicator(
-                                    circularStrokeCap: CircularStrokeCap.round,
-                                    backgroundColor: grey.withOpacity(0.3),
-                                    radius: 110.0,
-                                    lineWidth: 6.0,
-                                    percent: 0.53,
-                                    progressColor: primary),
-                              ),
-                              Positioned(
-                                top: 16,
-                                left: 13,
-                                child: Container(
-                                  width: 85,
-                                  height: 85,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                          image: NetworkImage(
-                                              "https://images.unsplash.com/photo-1531256456869-ce942a665e80?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTI4fHxwcm9maWxlfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"),
-                                          fit: BoxFit.cover)),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
+                      // Container(
+                      //   width: (size.width - 40) * 0.4,
+                      //   child: Container(
+                      //     child: Stack(
+                      //       children: [
+                      //         RotatedBox(
+                      //           quarterTurns: -2,
+                      //           child: CircularPercentIndicator(
+                      //               circularStrokeCap: CircularStrokeCap.round,
+                      //               backgroundColor: grey.withOpacity(0.3),
+                      //               radius: 110.0,
+                      //               lineWidth: 6.0,
+                      //               percent: 0.53,
+                      //               progressColor: primary),
+                      //         ),
+                      //         Positioned(
+                      //           top: 16,
+                      //           left: 13,
+                      //           child: Container(
+                      //             width: 85,
+                      //             height: 85,
+                      //             decoration: BoxDecoration(
+                      //                 shape: BoxShape.circle,
+                      //                 image: DecorationImage(
+                      //                     image: NetworkImage(
+                      //                         "https://images.unsplash.com/photo-1531256456869-ce942a665e80?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTI4fHxwcm9maWxlfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"),
+                      //                     fit: BoxFit.cover)),
+                      //           ),
+                      //         )
+                      //       ],
+                      //     ),
+                      //   ),
+                      // ),
                       Container(
                         width: (size.width - 40) * 0.6,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Abbie Wilson",
+                              "Vinicius Castro",
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -106,7 +106,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               height: 10,
                             ),
                             Text(
-                              "Credit score: 73.50",
+                              "Pontos: 245",
                               style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,
@@ -143,7 +143,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "United Bank Asia",
+                                "Saldo",
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 12,
@@ -161,18 +161,6 @@ class _ProfilePageState extends State<ProfilePage> {
                               ),
                             ],
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(color: white)),
-                            child: Padding(
-                              padding: const EdgeInsets.all(13.0),
-                              child: Text(
-                                "Update",
-                                style: TextStyle(color: white),
-                              ),
-                            ),
-                          )
                         ],
                       ),
                     ),
@@ -199,16 +187,17 @@ class _ProfilePageState extends State<ProfilePage> {
                 TextField(
                   controller: _email,
                   cursorColor: black,
+                  enabled: false,
                   style: TextStyle(
                       fontSize: 17, fontWeight: FontWeight.bold, color: black),
                   decoration: InputDecoration(
-                      hintText: "Email", border: InputBorder.none),
+                      hintText: "email@gmail.com.br", border: InputBorder.none),
                 ),
                 SizedBox(
                   height: 20,
                 ),
                 Text(
-                  "Date of birth",
+                  "Data de nascimento",
                   style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 13,
@@ -217,29 +206,11 @@ class _ProfilePageState extends State<ProfilePage> {
                 TextField(
                   controller: dateOfBirth,
                   cursorColor: black,
+                  enabled: false,
                   style: TextStyle(
                       fontSize: 17, fontWeight: FontWeight.bold, color: black),
                   decoration: InputDecoration(
-                      hintText: "Date of birth", border: InputBorder.none),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  "Date of birth",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 13,
-                      color: Color(0xff67727d)),
-                ),
-                TextField(
-                  obscureText: true,
-                  controller: password,
-                  cursorColor: black,
-                  style: TextStyle(
-                      fontSize: 17, fontWeight: FontWeight.bold, color: black),
-                  decoration: InputDecoration(
-                      hintText: "Password", border: InputBorder.none),
+                      hintText: "18/10/1999", border: InputBorder.none),
                 ),
               ],
             ),

@@ -16,12 +16,13 @@ class RootApp extends StatefulWidget {
 
 class _RootAppState extends State<RootApp> {
   int pageIndex = 0;
+
   List<Widget> pages = [
     DailyPage(),
     StatsPage(),
     BudgetPage(),
     ProfilePage(),
-    CreatBudgetPage()
+    CreatBudgetPage(),
   ];
 
   @override
@@ -48,7 +49,7 @@ class _RootAppState extends State<RootApp> {
               Icons.add,
               size: 25,
             ),
-            backgroundColor: Colors.pink
+            backgroundColor: primary
             //params
             ),
         floatingActionButtonLocation:
@@ -77,9 +78,9 @@ class _RootAppState extends State<RootApp> {
       icons: iconItems,
       activeIndex: pageIndex,
       gapLocation: GapLocation.center,
-      notchSmoothness: NotchSmoothness.softEdge,
+      notchSmoothness: NotchSmoothness.verySmoothEdge,
       leftCornerRadius: 10,
-      iconSize: 25,
+      iconSize: 30,
       rightCornerRadius: 10,
       onTap: (index) {
         selectedTab(index);
@@ -90,7 +91,11 @@ class _RootAppState extends State<RootApp> {
 
   selectedTab(index) {
     setState(() {
-      pageIndex = index;
+      if (index != 2) {
+        pageIndex = index;
+      } else {
+        pageIndex = index;
+      }
     });
   }
 }
