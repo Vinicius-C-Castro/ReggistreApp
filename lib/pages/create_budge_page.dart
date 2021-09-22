@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:moneytextformfield/moneytextformfield.dart';
 
 import '/json/create_budget_json.dart';
@@ -126,7 +127,7 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
                       left: 10,
                     ),
                     width: 150,
-                    height: 170,
+                    height: 150,
                     decoration: BoxDecoration(
                         color: white,
                         border: Border.all(
@@ -151,16 +152,16 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                              width: 40,
-                              height: 40,
+                              width: 50,
+                              height: 50,
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: grey.withOpacity(0.15)),
                               child: Center(
                                 child: Image.asset(
                                   categories[index]['icon'],
-                                  width: 30,
-                                  height: 30,
+                                  width: 50,
+                                  height: 50,
                                   fit: BoxFit.contain,
                                 ),
                               )),
@@ -168,7 +169,7 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
                             categories[index]['name'],
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                              fontSize: 18,
                             ),
                           )
                         ],
@@ -187,18 +188,29 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Descrição",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 13,
-                      color: Color(0xff67727d)),
-                ),
                 TextField(
                   controller: _budgetName,
                   cursorColor: black,
                   style: TextStyle(
                       fontSize: 17, fontWeight: FontWeight.bold, color: black),
+                  decoration: InputDecoration(
+                    focusColor: blue,
+                    labelText: "Descrição",
+
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: new BorderRadius.circular(12.0),
+                      borderSide: BorderSide(width: 2,color: blue),
+                    ),
+
+                    border: OutlineInputBorder(
+                      borderRadius: new BorderRadius.circular(12.0),
+                      borderSide: BorderSide(width: 2, color: blue),
+                    ),
+                    labelStyle: TextStyle(
+                        color: grey,
+                        fontSize: 14.0
+                    ),
+                  ),
                 ),
                 SizedBox(
                   height: 20,
@@ -242,11 +254,11 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    _icon(0, text: "Receita", icon: Icons.arrow_upward_rounded),
+                    _icon(0, text: "Receita", icon: Icons.add_rounded),
                     SizedBox(
                       width: 50,
                     ),
-                    _icon(1, text: "Despesa", icon: Icons.arrow_downward_rounded),
+                    _icon(1, text: "Despesa", icon: Icons.remove),
                   ],
                 ),
               ],

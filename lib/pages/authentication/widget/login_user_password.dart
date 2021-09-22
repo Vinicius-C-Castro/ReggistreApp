@@ -73,7 +73,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-                color: blue, fontWeight: FontWeight.bold, fontSize: 18),
+                color: white, fontWeight: FontWeight.bold, fontSize: 18),
           )),
       body: Stack(
         children: <Widget>[
@@ -110,7 +110,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: MediaQuery.of(context).size.height * 0.6,
+              height: MediaQuery.of(context).size.height * 0.55,
               width: MediaQuery.of(context).size.width,
               decoration: new BoxDecoration(
                   color: white,

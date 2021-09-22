@@ -94,7 +94,7 @@ class _LoginFreshResetPasswordState extends State<LoginFreshResetPassword> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: MediaQuery.of(context).size.height * 0.6,
+              height: MediaQuery.of(context).size.height * 0.55,
               width: MediaQuery.of(context).size.width,
               decoration: new BoxDecoration(
                   color: white,

@@ -179,8 +179,8 @@ class _StatsPageState extends State<StatsPage> {
           Wrap(
             spacing: 20,
             children: [
-              _receitaDespesaCard(size, Icons.arrow_upward_rounded, green,"Receitas", "R\$6593.75"),
-              _receitaDespesaCard(size, Icons.arrow_downward_rounded, red, "Despesas", "R\$1143.21"),
+              _receitaDespesaCard(size, Icons.add_rounded, green,"Receitas", "R\$6593.75"),
+              _receitaDespesaCard(size, Icons.remove, red, "Despesas", "R\$1143.21"),
             ],
           )
         ],
