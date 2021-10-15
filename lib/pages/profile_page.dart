@@ -50,6 +50,17 @@ class _ProfilePageState extends State<ProfilePage> {
                             fontWeight: FontWeight.bold,
                             color: black),
                       ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.exit_to_app_outlined,
+                            size: 25,
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                   SizedBox(

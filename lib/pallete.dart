@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+const String BASE_URL = 'https://reggistre-api.herokuapp.com';
 
 const Color reggistreCollorGreen = Color.fromRGBO(136, 196, 36, 1);
 

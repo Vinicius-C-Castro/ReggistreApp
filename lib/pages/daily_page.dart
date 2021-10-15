@@ -47,6 +47,17 @@ class _DailyPageState extends State<DailyPage> {
                             fontWeight: FontWeight.bold,
                             color: black),
                       ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.exit_to_app_outlined,
+                            size: 25,
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -216,7 +227,7 @@ class _DailyPageState extends State<DailyPage> {
                 Padding(
                   padding: const EdgeInsets.only(top: 5),
                   child: Text(
-                    "R\$1780.00",
+                    "R\580.00",
                     style: TextStyle(
                         fontSize: 20,
                         color: black,

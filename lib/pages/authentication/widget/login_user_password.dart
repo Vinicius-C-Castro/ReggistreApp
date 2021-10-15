@@ -262,14 +262,17 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                       )
                     : GestureDetector(
                         onTap: () async {
-
-                          widget.callLogin(context, setIsRequest,
+                          print(this._textEditingControllerUser.text);
+                          print(this._textEditingControllerPassword.text);
+                          bool sucesso = await widget.callLogin(context, setIsRequest,
                               this._textEditingControllerUser.text,
                               this._textEditingControllerPassword.text);
 
-                         Navigator.of(context).push(MaterialPageRoute(
-                           builder: (context) => RootApp(),
-                         ));
+                          if (sucesso == true) {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => RootApp(),
+                            ));
+                          }
                         },
                         child: SizedBox(
                             height: MediaQuery.of(context).size.height * 0.07,
