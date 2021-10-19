@@ -69,7 +69,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
           centerTitle: true,
           elevation: 0,
           title: Text(
-            this.loginFreshWords.login,
+            "Bem-vindo(a)!",
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(

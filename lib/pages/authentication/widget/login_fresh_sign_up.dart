@@ -155,7 +155,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                                 borderSide: BorderSide(
                                     color: widget.backgroundColor ??
                                         green)),
-                            hintText: this.loginFreshWords.hintLoginUser)),
+                            hintText: "Email")),
                   ),
                   Padding(
                     padding:

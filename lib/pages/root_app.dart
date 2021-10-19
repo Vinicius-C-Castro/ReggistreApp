@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:ionicons/ionicons.dart';
 
+import '../globals.dart';
+import '../pallete.dart';
 import '/pages/budget_page.dart';
 import '/pages/create_budge_page.dart';
 import '/pages/daily_page.dart';
@@ -8,6 +12,8 @@ import '/pages/stats_page.dart';
 import '/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:http/http.dart' as http;
+
 
 class RootApp extends StatefulWidget {
   @override
@@ -35,6 +41,8 @@ class _RootAppState extends State<RootApp> {
   void dispose() {
     super.dispose();
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -89,13 +97,49 @@ class _RootAppState extends State<RootApp> {
     );
   }
 
-  selectedTab(index) {
-    setState(() {
-      if (index != 2) {
-        pageIndex = index;
-      } else {
-        pageIndex = index;
+  selectedTab(index) async {
+
+    bool sucesso = await getMovimentacoes();
+
+    if (sucesso == true) {
+      setState(() {
+        if (index != 2) {
+          pageIndex = index;
+        } else {
+          pageIndex = index;
+        }
+      });
+    }
+  }
+
+  getMovimentacoes() async {
+    http.Response res = await http.get(BASE_URL+'/api/v1/movement/read-all');
+
+    bool sucesso = false;
+    List<Movimentacao> movs =  new List<Movimentacao>();
+    if (res.statusCode == 200) {
+
+      var responseData = json.decode(res.body);
+
+      for (var singlemovimentacao in responseData) {
+        Movimentacao movimentacao = Movimentacao(
+          id: singlemovimentacao["id"],
+          nome: singlemovimentacao["nome"],
+          descricao: singlemovimentacao["descricao"],
+          data: singlemovimentacao["data"],
+          tipoMovimentacao: singlemovimentacao["tipoMovimentacao"],
+          valor: singlemovimentacao["valor"],
+          recorrencia: singlemovimentacao["recorrencia"],
+          categoria: singlemovimentacao["categoria"],
+          pessoaFisica: singlemovimentacao["pessoaFisica"],
+        );
+
+        movs.add(movimentacao);
       }
-    });
+      sucesso = true;
+    }
+
+    globalMovimentacoes = movs;
+    return sucesso;
   }
 }

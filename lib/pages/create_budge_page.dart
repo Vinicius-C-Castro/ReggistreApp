@@ -61,10 +61,10 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
                   ),
                   Row(
                     children: [
-                      Icon(
-                        Icons.exit_to_app_outlined,
-                        size: 25,
-                      ),
+                      // Icon(
+                      //   Icons.exit_to_app_outlined,
+                      //   size: 25,
+                      // ),
                       SizedBox(
                         width: 20,
                       ),

@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
+import 'globals.dart';
 
 
 void main() {
@@ -18,36 +19,6 @@ class MyApp extends StatefulWidget {
 
   @override
   _MyAppState createState() => _MyAppState();
-}
-
-class PessoaFisica {
-  final int id;
-  final String nomeCompleto;
-  final bool situacao;
-  final String data;
-  final String email;
-  final double saldo;
-  final String nomeUsuario;
-  final String senha;
-  final int quantidadePontos;
-  final String data_nascimento;
-  final String tipoConta;
-  final List premioPessoa;
-
-  PessoaFisica({
-    this.id,
-    this.nomeCompleto,
-    this.situacao,
-    this.data,
-    this.email,
-    this.saldo,
-    this.nomeUsuario,
-    this.senha,
-    this.quantidadePontos,
-    this.data_nascimento,
-    this.tipoConta,
-    this.premioPessoa
-  });
 }
 
 class _MyAppState extends State<MyApp> {
@@ -93,7 +64,7 @@ class _MyAppState extends State<MyApp> {
             );
 
             if (user.nomeUsuario == userName) {
-              pessoaFisica = user;
+              globalPessoaFisica = user;
               if (user.senha == password) {
                 sucesso = true;
                 break;
@@ -104,7 +75,7 @@ class _MyAppState extends State<MyApp> {
             }
           }
 
-          if (pessoaFisica == null) {
+          if (globalPessoaFisica == null) {
             showErrorLogin(_context, "Usuário não encontrado.");
           }
 
@@ -165,16 +136,38 @@ class _MyAppState extends State<MyApp> {
     return LoginFreshSignUp(
         logo: 'assets/images/reggistre_logo.png',
         funSignUp: (BuildContext _context, Function isRequest,
-            SignUpModel signUpModel) {
+            SignUpModel signUpModel) async {
           isRequest(true);
+          bool sucesso = false;
+          String url = BASE_URL+'/api/v1/user/create';
 
-          print(signUpModel.email);
-          print(signUpModel.password);
-          print(signUpModel.repeatPassword);
-          print(signUpModel.surname);
-          print(signUpModel.name);
+          Map data = {
+            "nomeCompleto": signUpModel.name,
+            "situacao": true,
+            "data": "2021-04-09T20:00:00.000+00:00",
+            "email": signUpModel.email,
+            "saldo": 0,
+            "nomeUsuario": signUpModel.surname,
+            "senha": signUpModel.password,
+            "quantidadePontos": 0,
+            "data_nascimento": "2021-04-09T20:00:00.000+00:00",
+            "idtipoConta": 1
+          };
+
+          var body = json.encode(data);
+
+          var response = await http.post(url,
+              headers: {"Content-Type": "application/json"},
+              body: body
+          );
+
+          if (response.statusCode == 200) {
+            sucesso = true;
+          }
 
           isRequest(false);
+
+          return sucesso;
         });
   }
 }

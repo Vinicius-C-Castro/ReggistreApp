@@ -23,11 +23,11 @@ class LoginFreshWords {
       this.hintLoginPassword = 'Senha',
       this.recoverPassword = 'Recuperar Senha',
       this.messageRecoverPassword =
-          'Para recuperar a senha entre com um email, ' +
-              'você receberá um email para poder atualizar sua senha.',
+          'Para redefinir sua senha, entre com o e-mail utilizado no cadastro da sua conta.' +
+              'Um e-mail será enviado para esse endereço, com as instruções sobre como restabelecer seu acesso.',
       this.hintLoginUser = 'Usuário',
         this.hintRecoverEmail = 'Email',
-      this.login = 'Login',
+      this.login = 'Entrar',
       this.notAccount = 'Não tem uma conta?',
       this.signUp = 'Criar Conta',
       this.textLoading = 'Aguarde...'});
