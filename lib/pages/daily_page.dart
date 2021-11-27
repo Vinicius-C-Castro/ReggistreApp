@@ -132,7 +132,7 @@ class _DailyPageState extends State<DailyPage> {
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),
             child: Column(
-                children: List.generate(globalMovimentacoes.length, (index) {
+                children: List.generate(4, (index) {
               return Column(
                 children: [
                   Row(

@@ -118,7 +118,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               height: 10,
                             ),
                             Text(
-                              globalPessoaFisica.quantidadePontos.toString(),
+                              "95" + " ponto(s)",
                               style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,

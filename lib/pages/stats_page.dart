@@ -160,7 +160,7 @@ class _StatsPageState extends State<StatsPage> {
                             height: 10,
                           ),
                           Text(
-                            "R\$2446.90",
+                            "R\$ 955.90",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 25,
@@ -190,8 +190,8 @@ class _StatsPageState extends State<StatsPage> {
           Wrap(
             spacing: 20,
             children: [
-              _receitaDespesaCard(size, Icons.add_rounded, green,"Receitas", "R\$6593.75"),
-              _receitaDespesaCard(size, Icons.remove, red, "Despesas", "R\$1143.21"),
+              _receitaDespesaCard(size, Icons.add_rounded, green,"Receitas", "R\$ 450.75"),
+              _receitaDespesaCard(size, Icons.remove, red, "Despesas", "R\$ 275.21"),
             ],
           )
         ],

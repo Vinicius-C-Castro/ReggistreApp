@@ -57,6 +57,22 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
                             fontWeight: FontWeight.bold,
                             color: black),
                       ),
+
+                      FlatButton(
+                        onPressed: () {
+                          showSucessCreate("Movimentação criada com sucesso.");
+                        },
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            SizedBox(width: 6),
+                            Icon(Icons.check),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                   Row(
@@ -277,6 +293,28 @@ class _CreatBudgetPageState extends State<CreatBudgetPage> {
           )
         ],
       ),
+    );
+  }
+
+  void showSucessCreate( String mensagem) {
+    showDialog(
+        context: context,
+        barrierDismissible: false, // disables popup to close if tapped outside popup (need a button to close)
+        builder: (BuildContext context) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(borderRadius:
+            BorderRadius.all(Radius.circular(15))),
+            title: Text("Sucesso",),
+            content: Text(mensagem),
+            //buttons?
+            actions: <Widget>[
+              FlatButton(
+                child: Text("Ok"),
+                onPressed: () { Navigator.of(context).pop(); }, //closes popup
+              ),
+            ],
+          );
+        }
     );
   }
 
